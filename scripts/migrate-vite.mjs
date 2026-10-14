@@ -45,6 +45,7 @@ html = html.replace('05 / Przebieg budowy', '').replace('06 / Dziennik budowy ·
 html = html.replace('<div class="team-section-heading"><div class="section-label" aria-hidden="true"></div><h2 id="team-title">Doświadczenie, które<br><em>tworzą konkretni ludzie.</em></h2></div><div class="team-grid" id="team-grid">', '<div class="team-grid" id="team-grid"><div class="team-lead"><h2 id="team-title">Doświadczenie,<br><em>które tworzą ludzie.</em></h2></div>');
 html = html.replace(/<img class="hero-line"[^>]*>/, await readFile(new URL('src/data/hero-monogram.svg', root), 'utf8'));
 html = html.replace(/<span class="hero-wordmark"[\s\S]*?<\/span>/, '');
+html = html.replace(/<p class="ref-footer-credit">[\s\S]*?<\/p>/, '<p class="ref-footer-credit">Wizualizacje i strona www – <a href="https://kokonat.pl/" target="_blank" rel="noopener noreferrer">kokonat.pl</a></p>');
 html = html.replace(/<dialog /g, '<dialog data-lenis-prevent="" ');
 html = adoptRefieldArrows(html);
 await writeFile(new URL('src/data/page-markup.json', root), JSON.stringify(html));

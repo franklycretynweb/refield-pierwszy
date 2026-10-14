@@ -21,7 +21,6 @@
 .shared-cta .shared-cta-copy{grid-column:2;grid-row:1;font-size:14px;line-height:24px}
 .shared-cta .shared-cta-button{grid-column:3;grid-row:1;width:214px}
 .ref-footer>.ref-source-container{max-width:1290px}
-.ref-footer-credit{visibility:hidden}
 @media(max-width:1450px){
  .hero h1{font-size:54px;max-width:760px}
  .hero-content p{font-size:15px;max-width:440px}
