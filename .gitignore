@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.DS_Store
+.env*
+!.env.example
+*.pem
+*.key
+work/*
+!work/vite-matching/
+work/vite-matching/*
+!work/vite-matching/index.html
+!work/vite-matching/src/

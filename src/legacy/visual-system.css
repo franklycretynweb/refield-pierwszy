@@ -1,0 +1,122 @@
+/* Final shared visual rules. Different compositions, one Refield language. */
+:root{
+  --paper:#f4f4f4;
+  --line:#c9cecb;
+  --section-space:80px;
+  --title-size:clamp(40px,3.48vw,60px);
+  --label-size:10px;
+}
+html,body,main,main>section.section,main>section.hero{background:var(--paper)}
+.header{border-color:var(--line)}
+.header nav{color:var(--muted)}
+.header nav a:hover{color:var(--green)}
+.gallery,.standard{padding:var(--section-space) 0}
+.gallery{padding-top:104px;padding-bottom:56px}
+.story{padding:var(--section-space) 0 100px}
+.selector{padding:var(--section-space) 0 0}
+.pricing{padding:32px 0 48px}
+.construction{padding:64px 0 0}
+.journal{padding:64px 0 24px}
+.team{padding:64px 0 32px}
+.gallery h2,.story h2,.standard h2,.selector-heading h2,.construction h2,.journal h2{
+  font-size:var(--title-size);font-weight:600;line-height:1.08;letter-spacing:-.045em;
+}
+.pricing h2{font-size:32px;font-weight:500;line-height:1.2;letter-spacing:-.04em}
+.team h2{font-size:44px;font-weight:600;line-height:1.08;letter-spacing:-.045em}
+.section-label,.journal .section-label,.team .section-label,.construction-topline .section-label{
+  font-size:var(--label-size);font-weight:500;line-height:1.5;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-bottom:26px;
+}
+.section-label::before{width:6px;height:6px;background:var(--green)}
+.construction-topline .section-label{margin-bottom:0}
+.section-heading,.selector-heading{margin-bottom:44px}
+.section-heading p,.selector-intro p,.standard-intro p,.story-copy p,.journal-intro p{
+  font-size:14px;line-height:1.8;font-weight:400;color:var(--muted);
+}
+.story-copy strong,.standard-intro strong{font-weight:500;color:var(--ink)}
+.story-copy p{margin-bottom:22px}
+.standard-intro p{max-width:440px;margin-top:26px}
+.journal-intro{padding-bottom:4px}
+.benefit h3,.stage-heading,.stage-4 .stage-heading,.gallery-note h3{
+  font-size:26px;font-weight:500;line-height:1.2;letter-spacing:-.035em;
+}
+.benefit>p,.gallery-note p{font-size:13px;line-height:1.8;color:var(--muted)}
+.benefit{display:flex;flex-direction:column}
+.benefit-image{flex-shrink:0}
+.benefit>p{flex-grow:1}
+.benefit-metadata{font-size:11px;font-weight:500;text-transform:none}
+.benefit-metadata small{font-size:10px;font-weight:400;letter-spacing:0}
+.benefit summary{min-height:44px;font-size:11px}
+.benefit details p{font-size:12px;line-height:1.8}
+.standard-facts strong{font-size:44px;font-weight:500}
+.standard-facts small{font-size:24px}
+.standard-facts span{font-size:10px;text-transform:none;letter-spacing:0;line-height:1.6}
+.image-disclaimer,.standard-footnote,.journal-footer,.pricing-disclosure p,.construction-aside .construction-note{
+  font-size:10px;line-height:1.8;color:var(--muted);
+}
+figcaption,.standard-lead figcaption{font-size:10px;line-height:1.6;color:var(--muted)}
+.button,.hero-content .button{min-height:52px;padding:15px 20px;font-size:12px;font-weight:500;gap:14px}
+.button.secondary{background:var(--paper);border-color:var(--line)}
+.button.primary{background:var(--green);border-color:var(--green)}
+.button.primary:hover{background:#084d40}
+.button.secondary:hover{background:#e8ede8}
+.text-link{min-height:44px;font-weight:500}
+.refield-cta{background:var(--ink);color:var(--paper)}
+.refield-cta .button{background:var(--paper);color:var(--ink);min-height:52px;font-size:11px}
+.refield-cta h3 em{color:var(--warm)}
+.filter-tabs button,.price-filter-tabs button{font-size:12px;font-weight:400}
+.filter-tabs button.active,.price-filter-tabs button.active{color:var(--green)}
+.filter-tabs button.active::after,.price-filter-tabs button.active::after{height:2px;background:var(--green)}
+.selector-toolbar,.price-toolbar{border-color:var(--line)}
+.price-toolbar{border-bottom-color:var(--green)}
+.home-card{background:var(--paper);border-color:var(--line)}
+.home-card:hover{background:#edf1ec;border-color:var(--green)}
+.home-card-bottom,.benefit details,.price-table tbody tr,.price-table thead,.construction-topline,.team-bottom{border-color:var(--line)}
+.home-card-bottom{font-size:10px}
+.home-open{font-size:11px}
+.price-table thead,.price-row-action button{background:var(--paper)}
+.price-table tbody tr:hover,.price-table tbody tr:focus-within{background:#e9eee8}
+.price-row-action button:hover{background:var(--green)}
+.construction-number,.team-caption,.stage-number,.stage-newest{background:var(--paper)}
+.construction-step[open] .construction-number,.stage-4 .stage-number{background:var(--green)}
+.construction-layout{padding-top:64px;padding-bottom:56px}
+.construction-step{border-bottom-color:var(--line)}
+.construction-description{color:var(--muted)}
+.journal-sequence{margin-top:56px}
+.journal-reading-note,.journal-inline-link{border-color:var(--line)}
+.journal-footer a{border-color:var(--line)}
+.journal-dialog,.journal-dialog-top,.journal-dialog-pagination,.house-dialog,.house-dialog-nav,.gallery-dialog,.notification-dialog{background:var(--paper)}
+.house-pager button{background:var(--paper)}
+:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+.refield-cta :focus-visible{outline-color:var(--warm)}
+@media(max-width:1050px){
+  :root{--section-space:64px;--title-size:44px}
+  .gallery{padding-top:72px}.story{padding-bottom:80px}
+  .construction h2{font-size:36px}.team h2{font-size:40px}
+  .pricing h2{font-size:29px}
+  .benefit h3,.stage-heading,.stage-4 .stage-heading,.gallery-note h3{font-size:22px}
+  .section-heading p,.selector-intro p,.standard-intro p,.story-copy p,.journal-intro p{font-size:13px}
+  .standard-facts strong{font-size:36px}.standard-facts small{font-size:22px}
+  .home-card-bottom{font-size:9px}.home-open{font-size:10px}
+}
+@media(max-width:700px){
+  :root{--section-space:56px;--title-size:clamp(32px,9.3vw,40px)}
+  .gallery{padding-top:56px;padding-bottom:40px}.story{padding-bottom:70px}
+  .pricing{padding:28px 0 32px}.construction{padding-top:40px}
+  .journal{padding:48px 0 20px}.team{padding:48px 0 26px}
+  .section-label,.journal .section-label,.team .section-label,.construction-topline .section-label{font-size:9px;margin-bottom:22px}
+  .construction-topline .section-label{margin:0}
+  .construction h2{font-size:var(--title-size)}.team h2{font-size:36px}
+  .section-heading,.selector-heading{margin-bottom:30px}
+  .benefit h3{font-size:25px}.gallery-note h3{font-size:22px}
+  .stage-heading,.stage-4 .stage-heading{font-size:18px}
+  .section-heading p,.selector-intro p,.standard-intro p,.story-copy p,.journal-intro p{font-size:13px;line-height:1.8}
+  .standard-facts span{font-size:10px}
+  .button,.hero-content .button{min-height:48px;padding:13px 15px;font-size:11px;gap:10px}
+  .hero-content .button{font-size:10px;padding-inline:12px}
+  .home-card-bottom{font-size:9px}.home-open{font-size:10px}
+  .construction-layout{padding-top:40px;padding-bottom:40px}
+  .journal-sequence{margin-top:36px}
+  .image-disclaimer,.standard-footnote,.journal-footer,.pricing-disclosure p,.construction-aside .construction-note{font-size:9px}
+  .price-row-action button:hover{background:#e8ede8}
+}
+@media(max-width:380px){.hero-content .button{font-size:9px;padding-inline:10px}.stage-heading,.stage-4 .stage-heading{font-size:17px}.home-card-bottom{font-size:8px}.home-open{font-size:9px}}

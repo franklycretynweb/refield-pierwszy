@@ -1,0 +1,86 @@
+/* Measured from Refield /o-nas/, 21 Sep 2026. Keep the requested F4F4F4 paper. */
+.ref-prefooter{background:var(--paper);padding:0 0 150px}
+.ref-prefooter-content{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:1fr 1fr;gap:20px 30px;background:#0d1c19;color:#fff;padding:30px 40px}
+.ref-prefooter-content h2{font-size:48px;font-weight:700;line-height:1.12;letter-spacing:0;margin:0}
+.ref-prefooter-content h2 span{color:var(--green)}
+.ref-prefooter-content p{font-size:16px;line-height:24px;margin:0}
+.ref-prefooter-content strong{font-weight:700}
+.ref-prefooter-button{grid-column:2;grid-row:1 / 3;align-self:center;display:flex;align-items:center;justify-content:center;gap:12px;min-height:55px;padding:18px 20px;border:1px solid #c9cecb;background:#fff;color:#112420;font-size:14px;font-weight:500;line-height:1.1;text-decoration:none;white-space:nowrap;transition:background .2s}
+.ref-prefooter-button svg{color:var(--green);flex-shrink:0;transition:transform .25s}
+.ref-prefooter-button:hover{background:#e4ebe5}
+.ref-prefooter-button:hover svg{transform:translate(2px,2px)}
+.ref-prefooter-button:focus-visible{outline:2px solid var(--warm);outline-offset:5px}
+@media(max-width:1199px){.ref-prefooter{padding-bottom:100px}.ref-prefooter-content{display:flex;flex-direction:column;gap:20px}.ref-prefooter-content h2{font-size:32px}.ref-prefooter-button{margin-top:10px}}
+@media(max-width:767px){.ref-prefooter{padding-bottom:60px}.ref-prefooter-content{padding:30px 20px;gap:30px}.ref-prefooter-content h2{font-size:28px}.ref-prefooter-button{width:100%;margin:0}}
+@media(prefers-reduced-motion:reduce){.ref-prefooter-button,.ref-prefooter-button svg{transition:none}}
+.ref-source-container{width:100%;padding:0 15px;margin:0 auto;max-width:1320px}
+#zespol.team{padding:80px 0 100px}
+#zespol .team-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0 15px}
+#zespol .team-lead{grid-column:span 4}
+#zespol .team-lead h2{font-size:48px;line-height:1.12;font-weight:700;letter-spacing:0;margin:0 0 30px}
+#zespol .team-person{grid-column:span 3;display:flex;flex-direction:column;min-width:0}
+#zespol .team-person:nth-child(2),#zespol .team-person:nth-child(3){grid-column:span 4}
+#zespol .team-portrait{height:auto;aspect-ratio:1;background:var(--paper);overflow:hidden}
+#zespol .team-portrait img{width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(1);transform:none;transition:filter .3s}
+#zespol .team-caption{position:relative;background:transparent;margin:0;padding:0;overflow:hidden;transition:transform .3s}
+#zespol .team-caption::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:40px;background:var(--paper);pointer-events:none;transition:transform .3s}
+#zespol .team-caption-body{width:calc(100% - 30px);margin:auto;padding:20px;background:var(--paper);line-height:1.1}
+#zespol .team-person h3{font-size:24px;line-height:1.1;letter-spacing:0;font-weight:700;min-height:0;margin:0 0 10px}
+#zespol .team-role{font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;line-height:1.2;max-width:none;min-height:0;margin:0;color:var(--ink);opacity:.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#zespol .team-caption a{display:block;min-height:0;margin-top:10px;font-size:16px;font-weight:400;line-height:1.1;text-decoration:none;color:var(--green);overflow-wrap:anywhere;opacity:0;transition:opacity .3s}
+#zespol .team-person:hover img,#zespol .team-person:focus-within img{filter:grayscale(0);transform:none}
+#zespol .team-person:hover .team-caption,#zespol .team-person:focus-within .team-caption{transform:translateY(-30px)}
+#zespol .team-person:hover .team-caption::after,#zespol .team-person:focus-within .team-caption::after{transform:translateY(40px)}
+#zespol .team-person:hover .team-caption a,#zespol .team-person:focus-within .team-caption a{opacity:1}
+.ref-footer{background:var(--paper);color:#112420;padding:0 0 40px;font-size:16px;line-height:1.5}
+.ref-footer-top{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:15px;align-items:start}
+.ref-footer-top>nav,.ref-footer-socials{grid-column:span 2}
+.ref-footer-logo,.ref-footer-top>address{grid-column:span 3}
+.ref-footer-logo{display:block}.ref-footer-logo img{display:block;width:164px;height:74px}
+.ref-footer address{font-style:normal;font-size:16px;line-height:24px;align-self:center}
+.ref-footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:12px;line-height:18px;letter-spacing:.05em;font-weight:700;text-transform:uppercase}
+.ref-footer a{color:inherit;text-decoration:none;transition:color .2s,background-color .2s}
+.ref-footer a:hover{color:var(--green)}
+.ref-footer-socials{display:flex;justify-content:flex-end;gap:10px}
+.ref-footer-socials a{width:44px;height:44px;display:grid;place-items:center;border:1px solid #c9cecb;background:var(--paper)}
+.ref-footer-socials a:hover{background:#112420}
+.ref-footer-socials a:hover path{fill:var(--paper)}
+.ref-footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid #112420;margin-top:40px;padding-top:40px;font-size:14px;line-height:21px}
+.ref-footer-bottom p{margin:0;display:flex;gap:10px;align-items:center}
+.ref-footer-bottom b{font-weight:700}
+.ref-footer-bottom .ref-footer-credit{gap:4px}
+.ref-footer-credit a{font-weight:600}
+.ref-footer :focus-visible{outline:2px solid var(--green);outline-offset:4px}
+@media(min-width:1200px) and (max-width:1399px){.ref-source-container{max-width:1140px}}
+@media(min-width:576px) and (max-width:1199px){.ref-source-container{max-width:none;padding-inline:48px}}
+@media(max-width:1199px){
+ #zespol .team-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 15px}
+ #zespol .team-lead{grid-column:1 / -1}
+ #zespol .team-lead h2{font-size:32px}
+ #zespol .team-person,#zespol .team-person:nth-child(2),#zespol .team-person:nth-child(3){grid-column:span 1}
+ .ref-footer-top{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:30px}
+ .ref-footer-top>*{grid-column:span 1}
+ .ref-footer-top>nav,.ref-footer-top>.ref-footer-socials{grid-column:span 1}
+ .ref-footer address{grid-column:span 2}
+ .ref-footer-socials{justify-content:flex-start}
+}
+@media(max-width:991px){
+ #zespol.team{padding:64px 0 60px}
+ #zespol .team-person h3{font-size:18px}
+ #zespol .team-caption a{font-size:14px}
+ .ref-footer{padding-bottom:30px}
+ .ref-footer-bottom{margin-top:30px;padding-top:20px;flex-direction:column;justify-content:center}
+}
+@media(max-width:575px){
+ #zespol.team{padding:48px 0 40px}
+ #zespol .team-grid{display:block}
+ #zespol .team-lead h2{font-size:28px;line-height:1.12}
+ #zespol .team-caption a{font-size:16px}
+ .ref-footer-top{grid-template-columns:1fr 1fr;gap:20px 15px}
+ .ref-footer-logo{grid-column:1 / -1}
+ .ref-footer address{grid-column:1 / -1}
+ .ref-footer-top>.ref-footer-socials{grid-column:1 / -1;margin-top:10px}
+ .ref-footer-bottom p{font-size:14px;gap:10px}
+}
+@media(hover:none){#zespol .team-caption::after{display:none}#zespol .team-caption a{opacity:1}#zespol .team-caption{transform:none!important}}
+@media(prefers-reduced-motion:reduce){#zespol .team-person *,#zespol .team-caption::after{transition:none!important}}

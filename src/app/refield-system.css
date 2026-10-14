@@ -1,0 +1,302 @@
+/* Adopted from immutable refield-nowszy 5968b31; section grids stay in legacy CSS. */
+:root {
+  color-scheme: light;
+  --color-black: #112420;
+  --color-dark: #0d1c19;
+  --color-white: #ffffff;
+  --color-aqua: var(--theme-color-gold);
+  --theme-color-dark: var(--color-dark);
+  --theme-color-black: var(--color-black);
+  --theme-color-white: var(--color-white);
+  --theme-color-gold: #cfc7a4;
+  --theme-color-aqua: var(--theme-color-gold);
+  --theme-color-green: #00604f;
+  --theme-color-gray: #f4f4f4;
+  --theme-bg: var(--theme-color-gray);
+  --theme-color-logo: var(--theme-color-green);
+  --theme-line: color-mix(in srgb, var(--theme-color-black) 13%, transparent);
+  --theme-line-control: color-mix(in srgb, var(--theme-color-black) 20%, transparent);
+
+  --header-height: 80px;
+  --font-sans: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+}
+@media (min-width: 576px) {
+  :root { --header-height: 100px; }
+}
+
+@media (min-width: 1400px) {
+  :root { --header-height: 100px; }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --theme-color-black: var(--color-white);
+  --theme-color-white: var(--color-dark);
+  --theme-color-gray: var(--color-black);
+  --theme-color-logo: var(--color-white);
+  --theme-color-aqua: var(--color-white);
+  --theme-bg: var(--color-black);
+  --theme-line: color-mix(in srgb, var(--theme-color-black) 16%, transparent);
+}
+
+
+:root{--paper:var(--theme-bg);--ink:var(--theme-color-black);--green:var(--theme-color-green);--muted:color-mix(in srgb,var(--theme-color-black) 64%,transparent);--line:var(--theme-line);--warm:var(--theme-color-gold);--action-ink:light-dark(var(--theme-color-green),var(--color-white));--reserved-ink:light-dark(#726240,var(--theme-color-gold))}
+html{background:var(--theme-bg);scroll-padding-top:var(--header-height)}
+body{font-family:'Poppins',sans-serif;color:var(--theme-color-black);background:var(--theme-bg);-webkit-font-smoothing:antialiased;transition:background-color .3s ease-in-out,color .3s ease-in-out}
+#refield-site,main,main>section.section,main>section.hero,.ref-footer{background:var(--theme-bg);color:var(--theme-color-black)}
+h1,h2,h3{letter-spacing:0}
+strong,b{font-weight:700}
+p{ text-wrap:pretty }
+em{color:var(--action-ink)}
+:focus-visible{outline:2px solid var(--theme-color-green);outline-offset:4px}
+[data-theme='dark'] :focus-visible{outline-color:var(--color-white)}
+::selection{background:var(--theme-color-green);color:var(--color-white)}
+/* Refield t-l: 28 / 32 / 48 px; the existing compositions keep their widths. */
+.hero h1,.gallery h2,.standard h2,.selector-heading h2,.construction h2,.journal h2,#zespol .team-lead h2,.house-dialog h2,.journal-dialog h2,.notification-dialog h2,dialog h2{font-size:48px;font-weight:700;line-height:1.12;letter-spacing:0}
+.hero h1{max-width:760px}
+.hero-content p{font-size:16px;font-weight:400;line-height:1.5}
+.section-heading p,.selector-intro p,.standard-intro p,.journal-intro p,.construction-aside>p:not(.construction-note){font-size:16px;font-weight:400;line-height:1.5}
+.benefit h3,.gallery-note h3,.construction-step h3,.stage-heading,.stage-4 .stage-heading,.floor-caption h3{font-size:24px;font-weight:700;line-height:1.2;letter-spacing:0}
+.benefit>p,.gallery-note p,.construction-description,.benefit details p,.journal-latest p,.floor-caption p{font-size:14px;line-height:1.5}
+.pricing h2{font-size:32px;font-weight:700;line-height:1.12;letter-spacing:0}
+.home-name{font-size:30px;font-weight:400;line-height:1.2;letter-spacing:0}
+.home-dimensions strong{font-size:24px;font-weight:700;line-height:1.2;letter-spacing:0}
+.home-dimensions small,.benefit-metadata small,.detail-eyebrow,.spec-intro{font-size:12px;font-weight:500;line-height:1.2}
+.standard-facts strong{font-size:48px;font-weight:700;line-height:1.12;letter-spacing:0}
+.standard-facts small{font-size:24px}
+.standard-facts span{font-size:12px;font-weight:500;line-height:1.2}
+.benefit-metadata{font-size:14px;font-weight:700;line-height:1.5}
+.home-card-bottom,.home-open,.price-table .home-status{font-size:12px}
+.price-house-number{font-size:30px;font-weight:400;letter-spacing:0}
+.price-amount strong,.price-note p{font-size:24px;font-weight:700;letter-spacing:0;color:var(--action-ink)}
+.home-specification dl>div{font-size:14px}
+.home-specification dd{font-weight:700}
+.spec-main dd{font-size:32px;font-weight:700}
+.construction-destination>p{font-size:48px;font-weight:700;letter-spacing:0}
+.construction-destination>span,.hero-facts,.home-status{font-size:12px}
+#zespol .team-lead h2{margin:0;transform:none;white-space:normal}
+#zespol .team-person h3{font-size:24px;font-weight:700;letter-spacing:0}
+/* c-btn */
+.btn {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 18px 20px;
+  font-size: 14px; font-weight: 500; line-height: 1.1; text-align: center;
+  color: var(--theme-color-black); background: var(--theme-color-white);
+  border: 2px solid var(--theme-line-control);
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+.btn::before {
+  content: ''; width: 10px; height: 10px; flex-shrink: 0;
+  background: no-repeat center / contain url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L9.33333 9.33333M1 9.33333H9.33333V1' stroke='%2300604F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  transition: transform 0.25s ease-in-out, filter 0.25s ease-in-out;
+}
+.btn:hover { color: var(--color-white); background: var(--theme-color-green); box-shadow: 0 15px 30px 0 rgb(0 96 79 / 0.4); }
+.btn:hover::before { transform: rotate(90deg) scale(-1); filter: brightness(0) invert(1); }
+.btn--white { border-color: var(--theme-color-white); }
+.btn--white:hover { border-color: var(--theme-color-green); }
+.btn:disabled { cursor: not-allowed; opacity: 0.5; }
+.btn:disabled:hover { color: var(--theme-color-black); background: var(--theme-color-white); box-shadow: none; }
+.btn:disabled:hover::before { transform: none; filter: none; }
+
+/* c-tag */
+.tag {
+  display: inline-block; width: fit-content;
+  padding: 14px 20px;
+  font-size: 12px; font-weight: 700; line-height: 1.1; letter-spacing: 0.08em; text-transform: uppercase;
+  color: light-dark(var(--theme-color-green), var(--color-white));
+  background: color-mix(in srgb, var(--theme-color-green) 10%, transparent);
+}
+.tag--xs { padding: 7px 10px; }
+/* Poppins ma wysoką górną metrykę, więc wersaliki siedzą ~2 px za nisko. Przycinamy linię do wysokości
+   wersalików i oddajemy tę wysokość w paddingu — rozmiar tagu zostaje ten sam, napis jest na środku. */
+@supports (text-box: trim-both cap alphabetic) {
+  .tag { text-box: trim-both cap alphabetic; padding-block: 16px; }
+  .tag--xs { padding-block: 9px; }
+}
+.tag--dark { color: var(--theme-color-aqua); background: light-dark(var(--theme-color-dark), var(--theme-color-green)); }
+.tag--white { color: light-dark(var(--theme-color-green), var(--color-white)); background: var(--theme-color-white); }
+
+/* Link ze strzałką ↘ („Przeczytaj”, „sprawdź na mapie”) */
+.link-arrow { display: inline-flex; align-items: center; gap: 15px; width: fit-content; }
+.link-arrow svg { color: var(--theme-color-green); }
+[data-theme='dark'] .link-arrow svg { color: var(--color-white); }
+.link-arrow:hover { color: var(--theme-color-green); }
+
+
+/* Apply the source's common components to the existing semantic controls. */
+.button,.button.primary,.button.secondary,.hero-content .button{position:relative;min-height:52px;padding:18px 20px;font-size:14px;font-weight:500;line-height:1.1;gap:12px;border:2px solid var(--theme-line-control);color:var(--theme-color-black);background:var(--theme-color-white);transition:background-color .25s ease-in-out,color .25s ease-in-out,box-shadow .25s ease-in-out}
+.button:hover,.button.primary:hover,.button.secondary:hover{color:var(--color-white);background:var(--theme-color-green);border-color:var(--theme-color-green);box-shadow:0 15px 30px rgb(0 96 79 / .4)}
+.button svg{transition:transform .25s ease-in-out;color:var(--action-ink)}
+.button:hover svg{transform:rotate(180deg) scale(-1);color:var(--color-white)}
+.button:disabled{opacity:.5;cursor:not-allowed;box-shadow:none}
+.text-link,.journal-inline-link,.construction-entry,.home-open,.back-to-houses{color:var(--theme-color-black);font-size:14px;font-weight:500;border-color:var(--theme-line);transition:color .2s ease-in-out,background-color .25s ease-in-out}
+.text-link:hover,.journal-inline-link:hover,.construction-entry:hover,.back-to-houses:hover{color:var(--action-ink)}
+.arrow,.editorial-arrow,.small-direction,.refield-arrow{color:var(--action-ink);flex-shrink:0}
+.refield-arrow{width:16px;height:16px;transform:rotate(90deg)}
+/* Source image and investment card feedback, adapted to our fixed image slots. */
+.image-button>img{transition:transform .3s ease-in-out}
+.image-button:hover>img,.image-button:focus-visible>img{transform:scale(1.15)}
+.image-open{opacity:1;transform:translate(100%,100%);background:var(--color-white);color:var(--color-black);transition:transform .25s ease-in-out}
+.image-button:hover .image-open,.image-button:focus-visible .image-open{transform:translate(0)}
+.image-open svg{color:var(--color-black)}
+.home-card{color:var(--theme-color-black);background:var(--theme-bg);border-color:var(--theme-line);transition:background-color .2s ease-in-out,border-color .2s ease-in-out}
+.home-card:hover,.home-card:focus-visible{background:var(--theme-color-white);border-color:var(--theme-color-green)}
+.home-plan img{mix-blend-mode:normal;transition:transform .3s cubic-bezier(.165,.84,.44,1)}
+.home-card:hover .home-plan img,.home-card:focus-visible .home-plan img{transform:scale(1.1)}
+.home-open{min-height:44px;padding:8px;transition:background-color .25s,color .25s}
+.home-open svg{transition:transform .25s}
+.home-card:hover .home-open,.home-card:focus-visible .home-open{color:var(--color-white);background:var(--theme-color-green)}
+.home-card:hover .home-open svg,.home-card:focus-visible .home-open svg{transform:rotate(0deg);color:var(--color-white)}
+.home-card-bottom{border-color:var(--theme-line)}
+.home-card-bottom b{color:var(--muted)}
+.home-status,.selector-intro>span{color:var(--action-ink)}
+[data-status='reserved'] .home-status,.home-status[data-status='reserved']{color:var(--reserved-ink)}
+[data-status='sold'] .home-status,.home-status[data-status='sold']{color:var(--muted)}
+/* Source AvailabilityFilter animated underline. */
+.filter-tabs button,.price-filter-tabs button{color:var(--muted);font-size:16px;transition:color .2s}
+.filter-tabs button::after,.price-filter-tabs button::after{background:var(--action-ink);height:2px;transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.filter-tabs button.active,.price-filter-tabs button.active,.filter-tabs button:hover,.price-filter-tabs button:hover{color:var(--theme-color-black)}
+.filter-tabs button.active::after,.price-filter-tabs button.active::after{background:var(--action-ink);transform:scaleX(1)}
+.filter-tabs button span,.price-filter-tabs button span{font-size:12px;color:var(--muted)}
+.garden-filter select{background:var(--theme-bg);color:var(--theme-color-black);border-color:var(--theme-line)}
+.price-table thead{background:var(--theme-bg);border-color:var(--theme-line)}
+.price-table tbody tr,.pricing-foot,.price-table .price-row-action{border-color:var(--theme-line)}
+.price-table tbody tr:hover,.price-table tbody tr:focus-within{background:var(--theme-color-white)}
+.price-row-action button,.house-pager button,.gallery-controls button{color:var(--theme-color-black);background:var(--theme-color-white);border:2px solid var(--theme-line-control);transition:background-color .25s,color .25s,border-color .25s}
+.price-row-action button:hover,.house-pager button:hover:not(:disabled),.gallery-controls button:hover{color:var(--color-white);background:var(--theme-color-green);border-color:var(--theme-color-green)}
+.price-row-action button:hover svg{color:var(--color-white)}
+.pricing-disclosure>span{border-color:var(--theme-line-control)}
+.price-opening{border-color:var(--theme-line)}
+/* Source tag-like floor navigation; the existing floor viewer remains. */
+.floor-navigation [role='tablist']{gap:10px;flex-wrap:wrap;padding-block:10px}
+.floor-navigation button{padding:14px 16px;font-size:12px;font-weight:700;line-height:1.1;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--theme-line-control);color:var(--theme-color-black);transition:background-color .2s,color .2s,border-color .2s}
+.floor-navigation button:hover{border-color:var(--theme-color-green)}
+.floor-navigation button[aria-selected='true']{color:var(--color-white);background:var(--theme-color-green);border-color:var(--theme-color-green)}
+.floor-navigation button[aria-selected='true']::after{display:none}
+.floor-image{background:#f4f4f4;color:var(--color-black)}
+.floor-image>img{mix-blend-mode:normal}
+.floor-view-index{color:#66716e}
+.floor-caption{flex-wrap:wrap}
+/* All panels inherit the real page theme; photographic labels stay legible. */
+dialog,.house-dialog,.gallery-dialog,.journal-dialog,.notification-dialog{color:var(--theme-color-black);background:var(--theme-color-white);max-height:calc(100dvh - 32px)}
+dialog::backdrop{background:rgb(13 28 25 / .8);backdrop-filter:none}
+html:has(dialog[open]){overflow:hidden}
+body:has(#house-dialog[open]){background:var(--theme-bg)}
+.house-dialog-nav,.journal-dialog-top,.journal-dialog-pagination{color:var(--theme-color-black);background:var(--theme-color-white);border-color:var(--theme-line)}
+.gallery-dialog>img,.entry-image{background:var(--theme-color-gray)}
+.dialog-close{min-height:44px;color:var(--theme-color-black)}
+.dialog-close span{transition:transform .25s cubic-bezier(.165,.84,.44,1)}
+.dialog-close:hover span{transform:rotate(90deg);color:var(--action-ink)}
+.entry-image figcaption{color:var(--color-black);background:var(--color-white)}
+.entry-meta,.entry-scope>span,.entry-copy .entry-next,.journal-dialog-pagination>span{color:var(--action-ink)}
+.entry-copy>p,.entry-copy .entry-disclaimer,.entry-scope small{color:var(--muted)}
+.entry-copy h2 em{color:var(--action-ink)}
+.entry-scope>div,.home-specification dl>div,.construction-detail{border-color:var(--theme-line)}
+.entry-copy h3{font-size:24px;line-height:1.2;font-weight:700}
+.entry-copy>p{font-size:16px;line-height:1.5}
+.notification-input input{min-width:0;background:var(--theme-color-white);color:var(--theme-color-black);border:1px solid var(--theme-line-control);font-size:14px}
+.notification-input input:focus{outline:none;border-color:var(--theme-color-green);box-shadow:0 0 0 1px var(--theme-color-green)}
+.stage-image{overflow:hidden;background:var(--theme-color-gray)}
+.stage-image>img{transition:transform .3s cubic-bezier(.165,.84,.44,1)}
+.journal-stage button:hover .stage-image>img,.journal-stage button:focus-visible .stage-image>img{transform:scale(1.1)}
+.stage-number,.stage-newest{color:var(--color-black);background:var(--color-white)}
+.stage-4 .stage-number{color:var(--color-white);background:var(--theme-color-green)}
+.stage-image-action{color:var(--color-white);background:var(--color-dark)}
+.stage-image-action svg{color:var(--color-white)}
+.stage-heading>.refield-arrow{filter:none;width:16px;height:16px}
+.stage-heading::before,.journal-reading-note,.journal-inline-link,.journal-footer a{border-color:var(--theme-line)}
+.stage-heading::before{background:var(--theme-line)}
+.stage-heading::after,.stage-4 .stage-heading::after{background:var(--action-ink)}
+.journal-reading-note p,.journal-footer,.journal-footer a{color:var(--muted)}
+/* Keep the original construction accordion; borrow source numbering and scroll feedback. */
+.construction-number{background:var(--theme-color-white);border-color:var(--theme-color-black);font-weight:700;color:var(--theme-color-black);transition:color .2s,border-color .2s}
+.construction-description{color:var(--muted)}
+.construction-step{border-color:var(--theme-line)}
+.construction-step[open] .construction-number{background:var(--theme-color-green);color:var(--theme-color-gold)}
+.construction-step[open] h3,.construction-step summary:hover h3{color:var(--action-ink)}
+.construction-toggle{color:var(--action-ink)}
+.construction-topline i{color:var(--muted)}
+.construction-steps li:not(:last-child)::after{background:var(--theme-line)}
+.construction-reading-rail{position:absolute;z-index:0;left:18px;width:1px;background:var(--theme-line);pointer-events:none}
+.construction-reading-rail span{position:absolute;inset:0 -.5px;background:var(--action-ink);transform:scaleY(var(--rail-progress,0));transform-origin:top}
+.construction-steps li[data-scroll-passed='true'] .construction-number{border-color:var(--theme-color-green)}
+.construction-step summary{transform:translate3d(0,calc((1 - var(--step-reveal,1))*12px),0);opacity:calc(.74 + var(--step-reveal,1)*.26)}
+@keyframes refield-content-in{from{opacity:.65;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.benefit details[open]>p,.floor-caption,.entry-copy{animation:refield-content-in .25s ease-out both}
+/* Source hero monogram, below the house and text. */
+.hero{isolation:isolate}
+.hero-monogram{position:absolute;z-index:0;top:calc(-1 * var(--header-height,84px));left:50%;width:520px;height:auto;max-width:none;color:var(--theme-color-white);pointer-events:none}
+[data-theme='dark'] .hero-monogram{color:color-mix(in srgb,var(--color-white) 5%,transparent)}
+/* CTA bands are dark in both source themes. Never force content into a fixed height. */
+.shared-cta.shared-cta,.journal .shared-cta{height:auto;min-height:188px;grid-template-rows:auto;background:var(--color-dark);color:var(--color-white)}
+.shared-cta .shared-cta-title{font-size:32px;font-weight:700;line-height:1.12;letter-spacing:0;color:var(--color-white)}
+.shared-cta .shared-cta-copy,.journal .shared-cta-copy{font-size:16px;line-height:1.5;color:var(--color-white)}
+.shared-cta .shared-cta-button{font-size:14px;color:var(--color-black);background:var(--color-white);border:1px solid var(--theme-line-control);transition:color .25s,background .25s,box-shadow .25s}
+.shared-cta .shared-cta-button:hover{color:var(--color-white);background:var(--theme-color-green);border-color:var(--theme-color-green);box-shadow:0 15px 30px rgb(0 96 79 / .4)}
+.shared-cta-button:hover svg{color:var(--color-white);transform:rotate(90deg) scale(-1)}
+#zespol .team-portrait,#zespol .team-caption,#zespol .team-caption-body,#zespol .team-caption::after{background:var(--theme-bg)}
+#zespol .team-caption a{color:var(--action-ink)}
+#zespol .team-person:nth-child(2) img{filter:grayscale(1)}
+#zespol .team-person:hover img,#zespol .team-person:focus-within img{filter:grayscale(0)}
+.ref-footer{color:var(--theme-color-black);background:var(--theme-bg)}
+.ref-footer-bottom{border-color:var(--theme-line)}
+.ref-footer-socials a{color:var(--theme-color-black);background:var(--theme-bg);border-color:var(--theme-line-control)}
+.ref-footer-socials path{fill:currentColor}
+.ref-footer-socials a:hover{color:var(--theme-bg);background:var(--theme-color-black)}
+.ref-footer-socials a:hover path{fill:currentColor}
+[data-theme='dark'] .ref-footer-logo img{filter:brightness(0) invert(1)}
+[data-theme='dark'] .standard-outline{opacity:.1;filter:brightness(0) invert(1)}
+/* The source's efficient smooth scroll, with native scrolling inside dialogs/menu. */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:clip}
+@media(max-width:1199px){
+ .hero h1,.gallery h2,.standard h2,.selector-heading h2,.construction h2,.journal h2,#zespol .team-lead h2,.house-dialog h2,.journal-dialog h2,.notification-dialog h2,dialog h2{font-size:32px}
+ .hero-monogram{left:55%;width:440px}
+ .benefit h3,.gallery-note h3,.construction-step h3,.stage-heading,.stage-4 .stage-heading{font-size:21px}
+}
+@media(max-width:991px){.hero-monogram{top:40px;left:45%;width:320px}}
+@media(max-width:767px){
+ .hero h1,.gallery h2,.standard h2,.selector-heading h2,.construction h2,.journal h2,#zespol .team-lead h2,.house-dialog h2,.journal-dialog h2,.notification-dialog h2,dialog h2{font-size:28px}
+ .hero-content p,.section-heading p,.selector-intro p,.standard-intro p,.journal-intro p{font-size:14px}
+ .home-name{font-size:21px}.home-dimensions strong{font-size:21px}
+ .filter-tabs button,.price-filter-tabs button{font-size:14px}
+ .shared-cta .shared-cta-title{font-size:28px}
+ .benefit h3,.gallery-note h3,.construction-step h3,.stage-heading,.stage-4 .stage-heading{font-size:18px}
+ .gallery-note p{font-size:12px}
+ .benefit-metadata{font-size:12px}
+ .button,.hero-content .button{font-size:12px;padding:16px 15px;gap:10px}
+ .construction-reading-rail{left:15px}
+ .floor-navigation [role='tablist']{gap:6px}
+ .floor-navigation button{padding:12px 10px;letter-spacing:.04em}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ .construction-reading-rail span{display:none}
+ .construction-step summary{transform:none;opacity:1}
+}
+/* Image badges sit on photography and retain an opaque, high-contrast surface. */
+.benefit-image .tag{color:var(--theme-color-green);background:var(--color-white)}
+.filter-tabs button.active span,.price-filter-tabs button.active span,.benefit summary span,#notification-result{color:var(--action-ink)}
+@media(max-width:767px){.home-card-bottom{flex-wrap:wrap;padding-block:8px}.home-open{font-size:12px}.shared-cta .shared-cta-button{white-space:normal}}
+
+@media(max-width:380px){.shared-cta .shared-cta-title{font-size:26px}}
+/* Older chapter headings had their own green rule; match the dark theme foreground. */
+:root[data-theme='dark'] #refield-site :is(h1,h2,h3) em{color:var(--color-white)}
+
+.back-to-houses>span{color:var(--action-ink)}
+.benefit-image .tag{font-weight:700}
+
+/* Independent standard cards: an expanded item never stretches its neighbours. */
+.benefits{align-items:start}
+.benefit{align-self:start}
+.benefit>p{flex-grow:0}
+.benefit-detail-body{display:flow-root;overflow:hidden;will-change:height}
+.benefit details .benefit-detail-body p{animation:none}
+.benefit summary{transition:color .2s ease-in-out}
+.benefit summary:hover{color:var(--action-ink)}
+.benefit summary span{transition:transform .25s cubic-bezier(.165,.84,.44,1)}
+.benefit details[data-expanded='true'] summary span{transform:rotate(45deg)}
+.benefit details[data-expanded='false'] summary span{transform:rotate(0)}

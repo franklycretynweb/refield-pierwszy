@@ -1,0 +1,53 @@
+/* Refield's editorial process grid, extended for the residential journey. */
+.construction{background:#fff;padding:78px 0 0;scroll-margin-top:30px}
+.construction-topline{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-bottom:27px;border-bottom:1px solid var(--line)}
+.construction-topline .section-label{margin:0;font-size:11px}
+.construction-topline>span:last-child{font-size:10px;color:var(--muted);letter-spacing:.035em}
+.construction-topline i{font-style:normal;color:#a6b3ac;margin:0 17px}
+.construction-layout{display:grid;grid-template-columns:34% minmax(0,1fr);gap:5%;padding:88px 0 72px;align-items:start}
+.construction-aside{position:sticky;top:48px;padding-right:16px}
+.construction h2{font-size:clamp(38px,3.6vw,62px);line-height:1.08;letter-spacing:-.055em;font-weight:600;margin:0}
+.construction h2 em{color:var(--green);font-style:normal}
+.construction-aside>p:not(.construction-note){max-width:330px;font-size:13px;line-height:1.9;color:var(--muted);margin:28px 0 0}
+.construction-destination{border-top:1px solid var(--line);margin-top:68px;padding-top:23px;max-width:300px}
+.construction-destination>span{font-size:10px;letter-spacing:.025em;color:var(--muted)}
+.construction-destination>p{font-size:76px;line-height:.99;letter-spacing:-.065em;font-weight:500;margin:20px 0}
+.construction-destination p span{font-size:15px;letter-spacing:-.025em;font-weight:400;margin-left:5px}
+.construction-destination p em{color:var(--green);font-style:normal}
+.construction-aside .construction-note{max-width:280px;font-size:9px;line-height:1.8;color:var(--muted);margin-top:25px}
+.construction-steps{list-style:none;padding:0;margin:0;position:relative}
+.construction-steps li{position:relative;display:flow-root;padding:0 0 0 85px}
+.construction-steps li:not(:last-child)::after{content:'';position:absolute;left:18px;top:18px;bottom:-18px;width:1px;background:#94afa2;z-index:0}
+.construction-step{position:relative;border-bottom:1px solid #9baea3;padding:0;margin:0 0 38px}
+.construction-step summary{position:relative;display:grid;grid-template-columns:43% minmax(0,1fr) 18px;gap:24px;align-items:start;list-style:none;cursor:pointer;padding:0 0 35px;min-height:125px;z-index:1}
+.construction-step summary::-webkit-details-marker{display:none}
+.construction-number{position:absolute;left:-85px;top:0;display:grid;place-items:center;width:37px;height:37px;background:#fff;border:1px solid var(--ink);font-size:14px;font-weight:600;font-variant-numeric:tabular-nums;transition:background .2s,color .2s}
+.construction-step h3{font-size:clamp(20px,1.5vw,26px);line-height:1.22;letter-spacing:-.04em;font-weight:600;margin:4px 0 0;transition:color .2s}
+.construction-description{font-size:13px;line-height:1.8;margin-top:2px;color:#43574f}
+.construction-toggle{position:relative;width:18px;height:18px;margin-top:7px;color:var(--green)}
+.construction-toggle::before,.construction-toggle::after{content:'';position:absolute;background:currentColor;left:3px;top:8px;width:12px;height:1px}
+.construction-toggle::after{transform:rotate(90deg);transition:transform .2s}
+.construction-step[open] .construction-toggle::after{transform:rotate(0deg)}
+.construction-step[open] .construction-number{background:var(--green);border-color:var(--green);color:#ded6b3}
+.construction-step[open] .construction-number::after{content:'';position:absolute;top:36px;left:16px;width:3px;height:24px;background:var(--green)}
+.construction-step[open] h3,.construction-step summary:hover h3{color:var(--green)}
+.construction-step summary:focus-visible{outline:2px solid var(--green);outline-offset:8px}
+.construction-detail{margin:0 0 33px 0;padding:22px 0 0;border-top:1px solid #e1e7e2;display:grid;grid-template-columns:43% minmax(0,1fr);gap:12px 24px}
+.construction-scope-label{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.construction-detail{overflow:hidden;min-height:0}
+.construction-detail p{font-size:11px;line-height:1.9;color:var(--ink);margin:0}
+.construction-entry,.construction-detail-note{grid-column:2;text-align:left;font-size:10px;line-height:1.7}
+.construction-entry{color:var(--green);padding:10px 0 0;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:44px}
+.construction-entry span{font-size:22px}.construction-entry:hover{text-decoration:underline;text-underline-offset:5px}
+.construction-detail-note{color:var(--muted)}
+.construction-steps li:last-child .construction-step{margin-bottom:0}
+.construction-next{display:grid;grid-template-columns:39% 1fr 50px;gap:0;align-items:center;padding:31px 0 34px;border-top:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.construction-next>span:first-child{font-size:10px;color:var(--muted)}
+.construction-next strong{font-size:20px;font-weight:500;letter-spacing:-.035em}
+.construction-next-arrow{justify-self:end;font-size:30px;font-weight:400;color:var(--green);transition:transform .2s}
+.construction-next:hover .construction-next-arrow{transform:translateY(5px)}
+@media(min-width:1600px){.construction-step summary{min-height:142px}.construction-description{font-size:14px}.construction-step{margin-bottom:43px}}
+@media(max-width:1100px){.construction-layout{grid-template-columns:31% minmax(0,1fr);gap:5%}.construction h2{font-size:38px}.construction-steps li{padding-left:62px}.construction-number{left:-62px}.construction-step summary{grid-template-columns:42% minmax(0,1fr) 12px;gap:14px}.construction-step h3{font-size:20px}.construction-description{font-size:12px}.construction-detail{grid-template-columns:42% minmax(0,1fr);gap:12px 14px}.construction-next{grid-template-columns:36% 1fr 40px}.construction-next strong{font-size:18px}}
+@media(max-width:800px){.construction{padding-top:52px}.construction-topline>span:last-child{display:none}.construction-layout{display:block;padding:46px 0 46px}.construction-aside{position:static;padding:0;display:grid;grid-template-columns:1.5fr 1fr;column-gap:35px;margin-bottom:55px}.construction h2{font-size:clamp(35px,5.5vw,45px);grid-column:1}.construction-aside>p:not(.construction-note){font-size:12px;margin-top:20px}.construction-destination{grid-column:2;grid-row:1 / 3;margin:0;padding:12px 0 0 24px;border-top:0;border-left:1px solid var(--line)}.construction-destination>p{font-size:64px}.construction-aside .construction-note{grid-column:1 / -1;max-width:460px;margin-top:22px}.construction-step summary{min-height:120px;grid-template-columns:42% 1fr 16px;gap:20px}.construction-description{font-size:13px}.construction-next{grid-template-columns:1fr 36px;gap:10px}.construction-next>span:first-child{grid-column:1}.construction-next strong{grid-column:1}.construction-next-arrow{grid-column:2;grid-row:1 / 3}}
+@media(max-width:520px){.construction-topline{padding-bottom:20px}.construction-aside{display:block;margin-bottom:45px}.construction h2{font-size:42px}.construction-aside>p:not(.construction-note){max-width:300px}.construction-destination{margin-top:28px;padding:19px 0;border-left:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;max-width:none;align-items:center;gap:7px 18px}.construction-destination>p{grid-column:2;grid-row:1 / 3;font-size:34px;line-height:1.05;margin:0}.construction-destination p span{font-size:11px}.construction-destination>span{font-size:9px}.construction-aside .construction-note{font-size:9px;margin-top:17px}.construction-steps li{padding-left:57px}.construction-number{left:-57px;width:32px;height:32px;font-size:12px}.construction-steps li:not(:last-child)::after{left:15px;top:16px;bottom:-16px}.construction-step[open] .construction-number::after{left:13px;top:31px;height:21px}.construction-step summary{grid-template-columns:1fr 20px;gap:15px 16px;min-height:0;padding-bottom:27px}.construction-step h3{font-size:24px;grid-column:1;margin-top:0}.construction-description{grid-column:1 / -1;grid-row:2;font-size:12px;line-height:1.85}.construction-toggle{grid-column:2;grid-row:1;margin-top:5px}.construction-step{margin-bottom:29px}.construction-detail{grid-template-columns:1fr;gap:9px;padding-top:19px;margin-bottom:26px}.construction-entry,.construction-detail-note{grid-column:1}.construction-next{padding:24px 0 27px}.construction-next strong{max-width:260px;font-size:19px;line-height:1.4}}
+@media(prefers-reduced-motion:reduce){.construction *,.construction *::after{transition:none!important}}

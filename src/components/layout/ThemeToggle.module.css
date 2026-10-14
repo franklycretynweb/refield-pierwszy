@@ -1,0 +1,72 @@
+/* c-theme-toggler z theme.min.css Refield. Stan z [data-theme] — bez mignięcia przed hydracją. */
+
+.toggler {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: lowercase;
+  color: var(--theme-color-black);
+  background: var(--theme-color-white);
+  border: 1px solid light-dark(var(--theme-color-gray), var(--color-white));
+  border-radius: 100vw;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.icon {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 100vw;
+  background: var(--theme-color-gray);
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.icon svg {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 17px;
+  max-height: 17px;
+  transition: transform 0.4s cubic-bezier(0.275, 0.885, 0.32, 1.1), opacity 0.25s ease-in-out;
+}
+.dark { transform: scale(0); opacity: 0; }
+
+.text {
+  position: relative;
+  z-index: 1;
+  display: none;
+  width: 70px;
+  line-height: 1;
+  white-space: nowrap;
+  transition: transform 0.3s ease-in-out;
+}
+.text span { transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; }
+.text span:last-child { position: absolute; top: 0; left: 0; opacity: 0; }
+
+:global([data-theme='dark']) .toggler { color: var(--color-white); background: var(--color-dark); }
+:global([data-theme='dark']) .icon,
+.toggler:hover .icon { background: var(--theme-color-green); }
+:global([data-theme='dark']) .light,
+.toggler:hover .light { transform: scale(0); opacity: 0; }
+.toggler:hover .light path { stroke: var(--color-white); }
+:global([data-theme='dark']) .dark,
+.toggler:hover .dark { transform: scale(1); opacity: 1; }
+:global([data-theme='dark']) .toggler:hover .light { transform: scale(1); opacity: 1; }
+:global([data-theme='dark']) .toggler:hover .dark { transform: scale(0); opacity: 0; }
+
+@media (min-width: 768px) {
+  .text { display: block; }
+  :global([data-theme='dark']) .icon { transform: translateX(75px); }
+  :global([data-theme='dark']) .text { transform: translateX(-30px); }
+  :global([data-theme='dark']) .text span:first-child { opacity: 0; }
+  :global([data-theme='dark']) .text span:last-child { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggler, .toggler * { transition: none; }
+}

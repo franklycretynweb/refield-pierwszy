@@ -1,0 +1,26 @@
+{
+  "name": "refield-original-nextjs",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 5182",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1 --port 5182",
+    "test:smoke": "node scripts/smoke.mjs",
+    "migrate:snapshot": "node scripts/migrate-vite.mjs",
+    "test:styles": "node scripts/style-regression.mjs",
+    "test:contrast": "node scripts/header-contrast.mjs",
+    "test:accordions": "node scripts/accordions.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^5.2.6",
+    "lenis": "^1.3.26",
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  }
+}
